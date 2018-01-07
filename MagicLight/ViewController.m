@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
     self.lightIsOn = false;
 
     int height = self.view.frame.size.height;
@@ -25,25 +26,25 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    // Light Label
+    self.lightLabel = [[UILabel alloc] initWithFrame:CGRectMake(-150, -24, 150, 24)];
+    [self.lightLabel setCenter:CGPointMake(width / 2, height / 2 - 80)];
+    self.lightLabel.backgroundColor = [UIColor clearColor];
+    self.lightLabel.font = [UIFont fontWithName:@"Helvetica" size:21];
+    self.lightLabel.textColor = [UIColor blackColor];
+    self.lightLabel.textAlignment = NSTextAlignmentCenter;
+    self.lightLabel.text = @"Magic Light";
+    [self.view addSubview:self.lightLabel];
     
     // Light Button
     self.lightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.lightButton.frame = CGRectMake(-150, -150, 150, 150);
     [self.lightButton setCenter:CGPointMake(width / 2, height / 2)];
     [self.lightButton setImage:[UIImage imageNamed:@"button_on"] forState:UIControlStateNormal];
-    [self.lightButton setImage:[UIImage imageNamed:@"button_off"] forState:UIControlStateHighlighted];
     [self.view addSubview:self.lightButton];
     [self.lightButton addTarget:self
                          action:@selector(lightButtonPressed:)
                forControlEvents:UIControlEventTouchUpInside];
-    
-    // Light Lable
-    self.lightLabel = [[UILabel alloc] initWithFrame:CGRectMake(-100, -22, 100, 22)];
-    [self.lightLabel setCenter:CGPointMake(width / 2, height / 2 - 100)];
-    self.lightLabel.backgroundColor = [UIColor clearColor];
-    self.lightLabel.textColor = [UIColor blackColor];
-    self.lightLabel.text = @"Magic Light";
-    [self.view addSubview:self.lightLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,13 +59,10 @@
         int height = self.view.frame.size.height;
         int width = self.view.frame.size.width;
         
+        [self.lightLabel setCenter:CGPointMake(width / 2, height / 2 - 80)];
         [self.lightButton setCenter:CGPointMake(width / 2, height / 2)];
-        [self.lightLabel setCenter:CGPointMake(width / 2, height / 2 - 100)];
-        
-    } completion:^(id  _Nonnull context) {
-        
+    } completion:^(id _Nonnull context) {
         // after rotation
-        
     }];
 }
 
@@ -77,8 +75,10 @@
         [device lockForConfiguration:nil];
         if (self.lightIsOn) {
             device.torchMode = AVCaptureTorchModeOn;
+            [self.lightButton setImage:[UIImage imageNamed:@"button_off"] forState:UIControlStateNormal];
         } else {
             device.torchMode = AVCaptureTorchModeOff;
+            [self.lightButton setImage:[UIImage imageNamed:@"button_on"] forState:UIControlStateNormal];
         }
         [device unlockForConfiguration];
     }
