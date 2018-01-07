@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) BOOL lightIsOn;
+@property (strong, nonatomic) UIButton *lightButton;
+@property (strong, nonatomic) UILabel *lightLabel;
+
+- (void) lightButtonPressed:(UIButton *)sender;
 
 @end
 

@@ -13,6 +13,9 @@
 		49831AA82001AE35007E241D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49831AA72001AE35007E241D /* Assets.xcassets */; };
 		49831AAB2001AE35007E241D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49831AA92001AE35007E241D /* LaunchScreen.storyboard */; };
 		49831AAE2001AE35007E241D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49831AAD2001AE35007E241D /* main.m */; };
+		49831AB52001B45D007E241D /* button_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 49831AB42001B45D007E241D /* button_off.png */; };
+		49831AB72001B465007E241D /* button_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 49831AB62001B465007E241D /* button_on.png */; };
+		49831ABB2001BA3B007E241D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49831ABA2001BA3B007E241D /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		49831AAA2001AE35007E241D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49831AAC2001AE35007E241D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49831AAD2001AE35007E241D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		49831AB42001B45D007E241D /* button_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_off.png; sourceTree = "<group>"; };
+		49831AB62001B465007E241D /* button_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_on.png; sourceTree = "<group>"; };
+		49831ABA2001BA3B007E241D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49831ABB2001BA3B007E241D /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,7 @@
 			children = (
 				49831A9D2001AE35007E241D /* MagicLight */,
 				49831A9C2001AE35007E241D /* Products */,
+				49831AB92001BA3B007E241D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,11 +72,29 @@
 				49831AA22001AE35007E241D /* ViewController.m */,
 				49831AA42001AE35007E241D /* Main.storyboard */,
 				49831AA72001AE35007E241D /* Assets.xcassets */,
+				49831AB82001B474007E241D /* Resources */,
 				49831AA92001AE35007E241D /* LaunchScreen.storyboard */,
 				49831AAC2001AE35007E241D /* Info.plist */,
 				49831AAD2001AE35007E241D /* main.m */,
 			);
 			path = MagicLight;
+			sourceTree = "<group>";
+		};
+		49831AB82001B474007E241D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				49831AB42001B45D007E241D /* button_off.png */,
+				49831AB62001B465007E241D /* button_on.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		49831AB92001BA3B007E241D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49831ABA2001BA3B007E241D /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +157,9 @@
 			files = (
 				49831AAB2001AE35007E241D /* LaunchScreen.storyboard in Resources */,
 				49831AA82001AE35007E241D /* Assets.xcassets in Resources */,
+				49831AB72001B465007E241D /* button_on.png in Resources */,
 				49831AA62001AE35007E241D /* Main.storyboard in Resources */,
+				49831AB52001B45D007E241D /* button_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
